@@ -1,0 +1,240 @@
+﻿<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="social-graph-wrapper widget-facebook">
+                <span class="s-icon"><i class="fa fa-facebook"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-6 border-right">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int ffollowers = ViewBag.facebookFollowers;
+                            if (ffollowers >= 1000000)
+                            {
+                                ffollowers = ffollowers / 1000000;
+                                string m = $"{ffollowers}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (ffollowers >= 1000)
+                            {
+                                ffollowers = ffollowers / 1000;
+                                string f = $"{ffollowers}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@ffollowers</h4>
+                            }
+                        }
+                        <p class="m-0">Followers</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int flikes = ViewBag.facebookLikes;
+                            if (flikes >= 1000000)
+                            {
+                                flikes = flikes / 1000000;
+                                string m = $"{flikes}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (flikes >= 1000)
+                            {
+                                flikes = flikes / 1000;
+                                string f = $"{flikes}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@flikes</h4>
+                            }
+                        }
+                        <p class="m-0">Likes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="social-graph-wrapper widget-linkedin">
+                <span class="s-icon"><i class="fa fa-linkedin"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-6 border-right">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int lfollowers = ViewBag.linkedinFollowers;
+                            if (lfollowers >= 1000000)
+                            {
+                                lfollowers = lfollowers / 1000000;
+                                string m = $"{lfollowers}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (lfollowers >= 1000)
+                            {
+                                lfollowers = lfollowers / 1000;
+                                string f = $"{lfollowers}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@lfollowers</h4>
+
+                            }
+                        }
+                        <p class="m-0">Followers</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int lstaffs = ViewBag.linkedinStaffs;
+                            if (lstaffs >= 1000000)
+                            {
+                                lstaffs = lstaffs / 1000000;
+                                string m = $"{lstaffs}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (lstaffs >= 1000)
+                            {
+                                lstaffs = lstaffs / 1000;
+                                string f = $"{lstaffs}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@lstaffs</h4>
+
+                            }
+                        }
+                        <p class="m-0">Staffs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="social-graph-wrapper widget-googleplus" style="background-color:rgb(221, 42, 123)">
+                <span class="s-icon"> <i class="fa fa-instagram" aria-hidden="true"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-6 border-right">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int ifollowers = ViewBag.InstagramFollowers;
+                            if (ifollowers >= 1000000)
+                            {
+                                ifollowers = ifollowers / 1000000;
+                                string m = $"{ifollowers}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (ifollowers >= 1000)
+                            {
+                                ifollowers = ifollowers / 1000;
+                                string f = $"{ifollowers}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@ifollowers</h4>
+
+                            }
+                        }
+                        <p class="m-0">Followers</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int following = ViewBag.InstagramFollowings;
+                            if (following >= 1000000)
+                            {
+                                following = following / 1000000;
+                                string m = $"{following}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (following >= 1000)
+                            {
+                                following = following / 1000;
+                                string f = $"{following}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@following</h4>
+
+                            }
+                        }
+                        <p class="m-0">Following</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="social-graph-wrapper widget-twitter">
+                <span class="s-icon"><i class="fa fa-twitter"></i></span>
+            </div>
+            <div class="row">
+                <div class="col-6 border-right">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int xfollowers = ViewBag.XFollowers;
+                            if (xfollowers >= 1000000)
+                            {
+                                xfollowers = xfollowers / 1000000;
+                                string m = $"{xfollowers}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (xfollowers >= 1000)
+                            {
+                                xfollowers = xfollowers / 1000;
+                                string f = $"{xfollowers}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@xfollowers</h4>
+
+                            }
+                        }
+                        
+                        <p class="m-0">Followers</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
+                        @{
+                            int xfollowings = ViewBag.XFollowings;
+                            if (xfollowings >= 1000000)
+                            {
+                                xfollowings = xfollowings / 1000000;
+                                string m = $"{xfollowings}m";
+                                <h4 class="m-1">@m</h4>
+                            }
+                            else if (xfollowings >= 1000)
+                            {
+                                xfollowings = xfollowings / 1000;
+                                string f = $"{xfollowings}k";
+                                <h4 class="m-1">@f</h4>
+                            }
+                            else
+                            {
+                                <h4 class="m-1">@xfollowings</h4>
+
+                            }
+                        }
+                        <p class="m-0">Following</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

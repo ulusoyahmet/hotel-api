@@ -1,0 +1,29 @@
+﻿@model List<(HotelProject.EntityLayer.Concrete.AppUser User, IList<string> Roles)>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayoutController/_AdminLayout.cshtml";
+    ViewBag.Title = "Assign Roles";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.User.UserName</td>
+                <td>@string.Join(", ", item.Roles)</td>
+                <td>
+                    <a href="/RoleAssign/AssignRole/@item.User.Id" class="btn btn-primary">Assign Role</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

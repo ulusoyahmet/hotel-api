@@ -1,0 +1,60 @@
+﻿@model List<ResultBookingDto>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="active-member">
+                    <div class="table-responsive">
+                        <table class="table table-xs mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Mail</th>
+                                    <th>CheckIn</th>
+                                    <th>CheckOut</th>
+                                    <th>AdultCount/ChildCount</th>
+                                    <th>RoomCount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Mail</td>
+                                        <td>@item.CheckIn?.ToString("g")</td>
+                                        <td>@item.CheckOut?.ToString("g")</td>
+                                        <td>@item.AdultCount / @item.ChildCount</td>
+                                        <td><i class="fa fa-circle-o text-success  mr-2"></i>@item.RoomCount</td>
+                                        <td>
+                                            @{
+                                                if (item.Status.Equals("Approved"))
+                                                {
+                                                    <div>
+                                                        <div class="progress" style="height: 6px">
+                                                            <div class="progress-bar bg-success" style="width: 100%"></div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div>
+                                                        <div class="progress" style="height: 6px">
+                                                            <div class="progress-bar bg-warning" style="width: 50%"></div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

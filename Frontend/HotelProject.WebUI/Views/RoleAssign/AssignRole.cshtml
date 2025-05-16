@@ -1,0 +1,43 @@
+﻿@model List<RoleAssignViewModel>
+@{
+
+    ViewData["Title"]= "AssignRole";
+    Layout = "~/Views/AdminLayoutController/_AdminLayout.cshtml";
+    ViewBag.Title ="Assign Roles to User";
+
+}
+
+
+<h3>Assign Roles to @ViewBag.userName</h3>
+<form method="post">
+    <input type="hidden" name="userId" value="@ViewBag.userId" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Assigned</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        @for(int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Model[i].RoleName</td>
+
+                    <td>
+                        <input type="hidden" name="model[@i].RoleId" value="@Model[i].RoleId"/>
+
+                        <input type="hidden" name="model[@i].RoleName" value="@Model[i].RoleName"/>
+
+                        <input type="checkbox" name="model[@i].RoleExists" value="true" @(Model[i].RoleExists ? "checked" : "") />
+
+                        <input type ="hidden" name="model[@i].RoleExists" value="false" />                   
+                    </td>                
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-success">Update Roles</button>
+</form>

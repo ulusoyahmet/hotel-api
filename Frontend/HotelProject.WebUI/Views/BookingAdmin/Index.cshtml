@@ -1,0 +1,56 @@
+﻿@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayoutController/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Bookings</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Guest</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
+                    <th>Status</th>
+                    <th>Confirm</th>
+                    <th>Cancel</th>
+                    <th>Suspend</th>
+                    <th>Update</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <th>@count</th>
+                        <td>@item.Name</td>
+                        <td>@(item.CheckIn?.ToString("dd-MMM-yyyy") ?? "N/A")</td>
+                        <td>@(item.CheckOut?.ToString("dd-MMM-yyyy") ?? "N/A")</td>
+                        <td>
+                            <span class="badge badge-primary px-2">@item.Status</span>
+                        </td>
+                        <td><a href="/BookingAdmin/ApproveBooking/@item.BookingID" class="btn btn-outline-primary">Confirm</a></td>
+                        <td><a href="/BookingAdmin/DeleteBooking/@item.BookingID" class="btn btn-outline-danger">Cancel</a></td>
+                        <td><a href="/BookingAdmin/SuspendBooking/@item.BookingID" class="btn btn-outline-warning">Suspend</a></td>
+                        <td><a href="/BookingAdmin/UpdateBooking/@item.BookingID" class="btn btn-outline-info">Update</a></td>
+                        <td><a href="#" class="btn btn-outline-dark">Details</a></td>
+                                
+                    </tr>
+                }
+                        
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

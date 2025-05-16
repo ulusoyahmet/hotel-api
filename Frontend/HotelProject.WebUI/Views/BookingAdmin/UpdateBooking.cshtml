@@ -1,0 +1,53 @@
+﻿@model UpdateBookingDto
+
+@{
+    ViewData["Title"] = "UpdateBooking";
+    Layout = "~/Views/AdminLayoutController/_AdminLayout.cshtml";
+}
+
+<form asp-action="UpdateGuest" method="post">
+    <input type="hidden" asp-for="BookingID" />
+
+    <label>Guest Name</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+
+    <label>Guest Mail</label>
+    <input type="email" asp-for="Mail" class="form-control" />
+    <br />
+
+    <label>Check In</label>
+    <input type="date" asp-for="CheckIn" class="form-control" />
+    <br />
+
+    <label>Check Out</label>
+    <input type="date" asp-for="CheckOut" class="form-control" />
+    <br />
+
+    <label>Adult Count</label>
+    <input type="text" asp-for="AdultCount" class="form-control" />
+    <br />
+
+    <label>Child Count</label>
+    <input type="text" asp-for="ChildCount" class="form-control" />
+    <br />
+
+    <label>Room Count</label>
+    <input type="text" asp-for="RoomCount" class="form-control" />
+    <br />
+
+    <label>Special Request</label>
+    <input type="text" asp-for="SpecialRequest" class="form-control" />
+    <br />
+
+    <label>Room Count</label>
+    <input type="text" asp-for="RoomCount" class="form-control" />
+    <br />
+
+    <label>Status</label>
+    <input type="text" asp-for="Status" class="form-control" />
+    <br />
+
+    <button class="btn btn-primary">Update Reservation</button>
+</form>
+
